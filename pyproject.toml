@@ -1,0 +1,23 @@
+[project]
+name = "khi-dl"
+version = "0.1.0"
+description = "Download music files from khinsider"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "nullscry" }
+]
+license = { text = "MIT" }
+dependencies = [
+    "requests==2.31.0",
+    "beautifulsoup4==4.12.2",
+    "mutagen==1.46.0",
+    "filetype==1.2.0"
+]
+
+[project.scripts]
+khi-dl = "khi_dl:main"
+
+[build-system]
+requires = ["uv_build>=0.9.4,<0.10.0"]
+build-backend = "uv_build"
