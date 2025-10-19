@@ -2,6 +2,8 @@
 
 A small command-line utility to download full album pages from KHInsider and save the tracks locally, organizing them into a folder named after the album title. The tool will also download the first album image on the page (if available) and embed it into each downloaded track's metadata (supports MP3 and FLAC).
 
+NOTE: This is currently very poorly tested so expect bugs for now!
+
 Features
 - Scrapes a KHInsider album page for track download links
 - Downloads tracks concurrently
