@@ -4,39 +4,37 @@ A small command-line utility to download full album pages from KHInsider and sav
 
 NOTE: This is currently very poorly tested so expect bugs for now!
 
-Features
+## Features
 - Scrapes a KHInsider album page for track download links
 - Downloads tracks concurrently
 - Creates an output folder derived from the page title (everything before " - Download")
 - Downloads the first image inside `<div class="albumImage">` and embeds it as cover art in MP3 and FLAC files
 - Decodes URL-encoded filenames (e.g. `%20` -> space)
 
-Requirements
-- Python >=3.10
-- The following Python packages (installed automatically if using the provided `pyproject.toml`):
-  - requests
-  - beautifulsoup4
-  - mutagen
-  - filetype
+## Installation
 
-Usage
+Currently there is no pypi installation option.
 
-Run the script with a KHInsider album URL:
+You should set the env variable `KHINSIDER_OUTPUT` if you'd like to set the output directory for the downloads. If it is not set, `khi-dl` will download in your current working directory.
+
+You can either download the main py (or clone the repo if you want) and run it like so:
 
 ```bash
 python main.py <KHINSIDER_ALBUM_URL> [--format mp3|flac]
 ```
 
-Configuration
-- You can set the `KHINSIDER_OUTPUT` environment variable to change the base output directory. By default files are saved into the current working directory.
+Or you can install it locally with `pip` or `uv` and run it like so:
+```bash
+uv tool install .                                 # in same directory as main.py
+khi-dl <KHINSIDER_ALBUM_URL> [--format mp3|flac]  # khi-dl will automatically be in your PATH
+```
 
-License
+## License
 - License: MIT (see `LICENSE`)
 
-Notes & Limitations
+## Notes & Limitations
 - The script sets a browser-like User-Agent header to avoid simple anti-bot blocks. If KHInsider changes their protections, you may need additional handling.
-- Album art embedding uses `mutagen` and supports MP3 and FLAC. Other audio formats are downloaded but won't receive embedded art.
 - Use responsibly and follow KHInsider's terms of service and copyright rules.
 
-Contributing
+## Contributing
 Pull requests and issues welcome.
